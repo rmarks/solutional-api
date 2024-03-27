@@ -1,7 +1,7 @@
 ﻿namespace Solutional.Api.Features.Orders.Shared;
 
 public record OrderModel(
-    int Id, 
+    Guid Id, 
     string Status, 
     OrderModel.AmountModel Amount, 
     IEnumerable<OrderProductModel> Products)
@@ -14,7 +14,7 @@ public record OrderModel(
 }
 
 public record OrderProductModel(
-        int Id,
+        Guid Id,
         string Name,
         string Price,
         int Product_id,

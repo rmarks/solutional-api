@@ -6,7 +6,7 @@ public static class GetOrder
 {
     public static WebApplication MapGetOrderEndpoint(this WebApplication app)
     {
-        app.MapGet("api/orders/{id}", async (int id, AppDbContext dbContext) =>
+        app.MapGet("api/orders/{id}", async (Guid id, AppDbContext dbContext) =>
         {
             var orderModel = await dbContext.Orders
                 .AsNoTracking()

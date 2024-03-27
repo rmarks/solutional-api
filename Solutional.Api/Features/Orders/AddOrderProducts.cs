@@ -6,7 +6,7 @@ public static class AddOrderProducts
 {
     public static WebApplication MapAddOrderProductsEndpoint(this WebApplication app)
     {
-        app.MapPost("api/orders/{id}/products", async (int id, [FromBody] int[]? productIds, [FromServices] AppDbContext dbContext) =>
+        app.MapPost("api/orders/{id}/products", async (Guid id, [FromBody] int[]? productIds, [FromServices] AppDbContext dbContext) =>
         {
             var order = await dbContext.Orders.FindAsync(id);
             if (order is null) return Results.NotFound("Not found");

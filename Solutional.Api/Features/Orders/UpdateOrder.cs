@@ -6,7 +6,7 @@ public static class UpdateOrder
 {
     public static WebApplication MapUpdateOrderEndpoint(this WebApplication app)
     {
-        app.MapPatch("api/orders/{id}", async (int id, [FromBody] OrderUpdateModel? model, [FromServices] AppDbContext dbContext) =>
+        app.MapPatch("api/orders/{id}", async (Guid id, [FromBody] OrderUpdateModel? model, [FromServices] AppDbContext dbContext) =>
         {
             var order = await dbContext.Orders.FindAsync(id);
             if (order is null) return Results.NotFound("Not found");

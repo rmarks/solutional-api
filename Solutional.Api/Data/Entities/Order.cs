@@ -5,7 +5,7 @@ namespace Solutional.Api.Data.Entities;
 
 public class Order
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [MaxLength(10)]
     public string Status { get; set; } = string.Empty;

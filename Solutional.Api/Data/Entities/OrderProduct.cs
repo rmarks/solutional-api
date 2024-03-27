@@ -6,9 +6,9 @@ namespace Solutional.Api.Data.Entities;
 
 public class OrderProduct
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
-    public int OrderId { get; set; }
+    public Guid OrderId { get; set; }
 
     [ForeignKey(nameof(Product))]
     public int ProductId { get; set; }

@@ -7,8 +7,8 @@ public static class UpdateOrderProduct
     public static WebApplication MapUpdateOrderProductEndpoint(this WebApplication app)
     {
         app.MapPatch("api/orders/{orderId}/products/{orderProductId}", async (
-            int orderId,
-            int orderProductId,
+            Guid orderId,
+            Guid orderProductId,
             [FromBody] OrderProductUpdateModel? updateModel,
             [FromServices] AppDbContext dbContext) =>
         {

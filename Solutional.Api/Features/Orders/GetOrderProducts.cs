@@ -6,7 +6,7 @@ public static class GetOrderProducts
 {
     public static WebApplication MapGetOrderProductsEndpoint(this WebApplication app)
     {
-        app.MapGet("api/orders/{id}/products", async (int id, AppDbContext dbContext) =>
+        app.MapGet("api/orders/{id}/products", async (Guid id, AppDbContext dbContext) =>
         {
             bool orderExists = await dbContext.Orders.AnyAsync(o => o.Id == id);
             if (!orderExists) return Results.NotFound("Not found");
